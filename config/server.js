@@ -8,9 +8,9 @@ module.exports = function () {
     const application = express();
 
     application.set('view engine', 'ejs');
-    application.set('views', './application/views');
+    application.set('views', './app/views');
 
-    application.use(express.static('application/public'));
+    application.use(express.static('app/public'));
     application.use(bodyParser.urlencoded({ extended: true }));
     application.use(expressValidator());
     application.use(expressSession({
