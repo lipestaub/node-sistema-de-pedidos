@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastre-se</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Cadastre-se</h1>
 
     <% if (errors) { %>
         <ul>
@@ -16,7 +16,11 @@
         </ul>
     <% } %>
 
-    <form action="/validate-user" method="post">
+    <form action="/register-new-client" method="post">
+        <label for="name">Nome</label>
+        <br>
+        <input type="text" name="name" id="name" value="<%= data.name %>">
+        <br>
         <label for="email">E-mail</label>
         <br>
         <input type="text" name="email" id="email" value="<%= data.email %>">
@@ -25,10 +29,12 @@
         <br>
         <input type="password" name="password" id="password" value="<%= data.password %>">
         <br>
+        <label for="confirmPassword">Confirmar Senha</label>
         <br>
-        <input type="submit" value="Entrar">
+        <input type="password" name="confirmPassword" id="confirmPassword" value="<%= data.confirmPassword %>">
+        <br>
+        <br>
+        <input type="submit" value="Cadastrar">
     </form>
-    <br>
-    <a href="/register-new-client">Cadastre-se</a>
 </body>
 </html>
