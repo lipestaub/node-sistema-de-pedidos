@@ -47,7 +47,11 @@ module.exports.registerClient = function (application, req, res) {
     let errors = req.validationErrors();
 
     if (data.password != data.confirmPassword) {
-        errors.push({msg: 'Os campos Senha e Confirmar Senha estão com valores diferentes!'})
+        if (errors == false) {
+            errors = [];
+        }
+        
+        errors.push({msg: 'Os campos Senha e Confirmar Senha estão com valores diferentes!'});
     }
 
     if (errors) {
